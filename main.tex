@@ -1,0 +1,72 @@
+\documentclass[a4paper,11pt,titlepage,oneside,openany]{jbook}
+% \setlength{\columnsep}{2zw}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% packages
+\usepackage{fancyhdr}  % pagestyle{fancy}
+\usepackage[top=20truemm,bottom=20truemm,left=20truemm,right=20truemm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{multicol}  % for multi column
+\usepackage{setspace}
+\usepackage[compact]{titlesec}
+\usepackage{url}
+
+%% pagestyle
+% header: define for header
+\pagestyle{fancy}
+\lhead{}
+% \chead{}
+% \rhead{}
+
+%% other
+% 脚注
+\renewcommand\thefootnote{\arabic{footnote})}
+
+% ノーブルの作成
+\makeatletter
+\renewcommand{\chapter}{%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \global\@topnum\z@
+  \secdef\@chapter\@schapter}
+\makeatother
+
+% chapter などのタイトルの spacing
+% テンプレ：\titlespacing{<command>}{<left>}{<before-sep>}{<after-sep>}[<right>]
+% \titleformat{\chapter}{\Huge\bfseries}{\chaptername\ \thechapter}{0pt}{\vskip 20pt\raggedright}%
+% Alter <after-sep> in the macro below to vary the separation after the \chapter title.
+\titlespacing{\chapter}{0pt}{50pt}{\vspace{-10pt}}{\vspace{-50pt}}
+
+%% title
+\title{統計学メモ}
+\author{@mathnuko}
+\date{2020/02/12 〜}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\tableofcontents
+
+\chapter*{はじめに}
+
+この文書は統計学のポイントをまとめるためのノートである．\footnote{脚注サンプル}
+hoge
+
+% part1 統計学
+\input{parts/part1_statistics.tex}
+
+% part2 数理統計
+\input{parts/part2_mathematical_statistics.tex}
+
+% part3 統計検定の情報整理
+\input{parts/part3_statistical_test.tex}
+
+\end{document}
