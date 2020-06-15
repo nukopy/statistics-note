@@ -6,6 +6,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% packages
+\usepackage{amsmath}
 \usepackage{fancyhdr}  % pagestyle{fancy}
 \usepackage[top=20truemm,bottom=20truemm,left=20truemm,right=20truemm]{geometry}
 \usepackage[dvipdfmx]{hyperref,graphicx}
@@ -23,6 +24,10 @@
 	pdfborder={0 0 0},
 	bookmarkstype=toc
 }
+% for check list
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
 
 %% pagestyle
 % header: define for header
